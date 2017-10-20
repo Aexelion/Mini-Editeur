@@ -7,15 +7,36 @@ public class Inserer implements Commande, Enregistrable {
 
     private Moteur engine;
     private IHM gui;
-
-    @Override
-    public void enregistrer() {
-
-    }
+    private Enregistreur recorder;
+    private MementoInserer m;
+    private boolean flagMemento = false;
 
     @Override
     public void execute() {
-        String str = gui.getText();
+        String str;
+        if (!flagMemento) {
+            str = gui.getText();
+        } else {
+            str = m.getText();
+            flagMemento = false;
+        }
         engine.inserer(str);
+        m = new MementoInserer(str);
+        recorder.enregistrer(this);
+    }
+
+    @Override
+    public Memento getMemento() {
+        return m;
+    }
+
+    @Override
+    public void setMemento(Memento m) {
+        if (m instanceof MementoInserer){
+            this.m = (MementoInserer) m;
+            flagMemento = true;
+        } else {
+            throw new IllegalArgumentException("MementoInserer attendu et "+ m.getClass().toString() +" fourni.");
+        }
     }
 }

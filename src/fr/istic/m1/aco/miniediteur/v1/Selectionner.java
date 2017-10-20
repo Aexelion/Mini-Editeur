@@ -7,16 +7,39 @@ public class Selectionner implements Commande, Enregistrable {
 
     private Moteur engine;
     private IHM gui;
+    private Enregistreur recorder;
+    private MementoSelectionner m;
+    private boolean flagMemento = false;
 
     @Override
     public void execute() {
-        int deb = gui.getInt(); //TODO reflechir aux fonctions de gui
-        int fin = gui.getInt();
+        int deb;
+        int fin;
+        if (!flagMemento){
+            deb = gui.getInt(); //TODO reflechir aux fonctions de gui
+            fin = gui.getInt();
+        } else {
+            deb = m.getDeb();
+            fin = m.getFin();
+            flagMemento = false;
+        }
         engine.selectionner(deb, fin);
+        //TODO remplissage du mementoSelectionner
+        recorder.enregistrer(this);
     }
 
     @Override
-    public void enregistrer() {
+    public Memento getMemento() {
+        return m;
+    }
 
+    @Override
+    public void setMemento(Memento m) {
+        if (m instanceof MementoSelectionner){
+            this.m = (MementoSelectionner) m;
+            flagMemento = true;
+        } else {
+            throw new IllegalArgumentException("MementoSelectionner attendu et "+ m.getClass().toString() +" fourni.");
+        }
     }
 }

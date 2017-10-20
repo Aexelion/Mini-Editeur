@@ -5,6 +5,7 @@ package fr.istic.m1.aco.miniediteur.v1;
  */
 public interface Enregistrable {
 
-    public void enregistrer();
+    public Memento getMemento();
+    public void setMemento(Memento m);
 
 }

@@ -6,7 +6,6 @@ package fr.istic.m1.aco.miniediteur.v1;
 public class Demarrer implements Commande {
 
     private Enregistreur recorder;
-    private IHM gui;
 
     @Override
     public void execute() {

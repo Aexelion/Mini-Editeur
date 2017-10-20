@@ -9,6 +9,6 @@ public class Refaire implements Commande {
 
     @Override
     public void execute() {
-
+        gest.refaire();
     }
 }
