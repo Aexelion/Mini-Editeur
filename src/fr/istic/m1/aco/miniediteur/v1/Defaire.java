@@ -9,6 +9,6 @@ public class Defaire implements Commande {
 
     @Override
     public void execute() {
-
+        gest.defaire();
     }
 }

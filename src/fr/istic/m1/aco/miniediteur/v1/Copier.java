@@ -6,15 +6,21 @@ package fr.istic.m1.aco.miniediteur.v1;
 public class Copier implements Commande, Enregistrable {
 
     private Moteur engine;
-    private IHM gui;
-
-    @Override
-    public void enregistrer() {
-
-    }
+    private Enregistreur recorder;
 
     @Override
     public void execute() {
+        engine.copier();
+        recorder.enregistrer(this);
+    }
+
+    @Override
+    public Memento getMemento() {
+        return null;
+    }
+
+    @Override
+    public void setMemento(Memento m) {
 
     }
 }

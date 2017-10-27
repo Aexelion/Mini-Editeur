@@ -6,15 +6,20 @@ package fr.istic.m1.aco.miniediteur.v1;
 public class Coller implements Commande, Enregistrable {
 
     private Moteur engine;
-    private IHM gui;
-
-    @Override
-    public void enregistrer() {
-
-    }
+    private Enregistreur recorder;
 
     @Override
     public void execute() {
         engine.coller();
+        recorder.enregistrer(this);
+    }
+
+    @Override
+    public Memento getMemento() {
+        return null;
+    }
+
+    @Override
+    public void setMemento(Memento m) {
     }
 }
