@@ -8,8 +8,8 @@ public class MementoSelectionner implements Memento{
     private int deb;
     private int fin;
 
-    public MementoSelectionner(int debut, int fin){
-        this.deb = debut;
+    public MementoSelectionner(int deb, int fin){
+        this.deb = deb;
         this.fin = fin;
     }
 

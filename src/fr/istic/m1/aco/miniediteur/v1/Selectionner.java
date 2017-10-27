@@ -24,7 +24,7 @@ public class Selectionner implements Commande, Enregistrable {
             flagMemento = false;
         }
         engine.selectionner(deb, fin);
-        //TODO remplissage du mementoSelectionner
+        m = new MementoSelectionner(deb,fin);
         recorder.enregistrer(this);
     }
 
