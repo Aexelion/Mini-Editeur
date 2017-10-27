@@ -4,4 +4,4 @@ Un projet d'éditeur de texte miniature. Réalisé dans le cadre de l'UE "Analys
 
 - Auteurs : **Heartbroken-Git** & **Aexelion**
 - Statut : **WIP**
-- CGUs : *TBD*
+- CGUs : **LPRAB 1.0**
