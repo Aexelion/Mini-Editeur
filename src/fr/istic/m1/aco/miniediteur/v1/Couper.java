@@ -5,6 +5,11 @@ public class Couper implements Commande, Enregistrable {
 	private Moteur engine;
 	private Enregistreur recorder;
 
+	public Couper(Moteur engine, Enregistreur recorder){
+		this.engine = engine;
+		this.recorder = recorder;
+	}
+
 	@Override
 	public void execute() {
 		engine.couper();

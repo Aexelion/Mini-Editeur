@@ -11,6 +11,12 @@ public class Selectionner implements Commande, Enregistrable {
     private MementoSelectionner m;
     private boolean flagMemento = false;
 
+    public Selectionner(Moteur engine, Enregistreur recorder, IHM gui){
+        this.engine = engine;
+        this.recorder = recorder;
+        this.gui = gui;
+    }
+
     @Override
     public void execute() {
         int deb;

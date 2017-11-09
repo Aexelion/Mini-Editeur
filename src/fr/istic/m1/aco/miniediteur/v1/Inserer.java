@@ -11,6 +11,11 @@ public class Inserer implements Commande, Enregistrable {
     private MementoInserer m;
     private boolean flagMemento = false;
 
+    public Inserer(Moteur engine, Enregistreur recorder, IHM gui){
+        this.engine = engine;
+        this.recorder = recorder;
+    }
+
     @Override
     public void execute() {
         String str;

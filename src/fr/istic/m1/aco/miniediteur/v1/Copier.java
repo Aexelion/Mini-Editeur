@@ -8,6 +8,11 @@ public class Copier implements Commande, Enregistrable {
     private Moteur engine;
     private Enregistreur recorder;
 
+    public Copier(Moteur engine, Enregistreur recorder){
+        this.engine = engine;
+        this.recorder = recorder;
+    }
+
     @Override
     public void execute() {
         engine.copier();

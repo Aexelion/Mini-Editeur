@@ -55,6 +55,8 @@ public class ImplMoteur implements Moteur {
 
         txt = txt.substring(0,debutSel) + s + txt.substring(finSel);
 
+        sel.setDeb(finSel); //Place le curseur de sélection après le texte qui vient d'être inséré
+
         buf.setTxt(txt);
     }
 

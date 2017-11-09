@@ -8,6 +8,11 @@ public class Coller implements Commande, Enregistrable {
     private Moteur engine;
     private Enregistreur recorder;
 
+    public Coller(Moteur engine, Enregistreur recorder){
+        this.engine = engine;
+        this.recorder = recorder;
+    }
+
     @Override
     public void execute() {
         engine.coller();
