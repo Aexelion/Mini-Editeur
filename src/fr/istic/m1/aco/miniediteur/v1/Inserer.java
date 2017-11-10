@@ -3,7 +3,7 @@ package fr.istic.m1.aco.miniediteur.v1;
 /**
  * Created by 16009566 on 13/10/17.
  */
-public class Inserer implements Commande, Enregistrable {
+public class Inserer implements CommandeEnregistrable {
 
     private Moteur engine;
     private IHM gui;
@@ -14,6 +14,7 @@ public class Inserer implements Commande, Enregistrable {
     public Inserer(Moteur engine, Enregistreur recorder, IHM gui){
         this.engine = engine;
         this.recorder = recorder;
+        this.gui = gui;
     }
 
     @Override

@@ -1,6 +1,6 @@
 package fr.istic.m1.aco.miniediteur.v1;
 
-public class Couper implements Commande, Enregistrable {
+public class Couper implements CommandeEnregistrable {
 	
 	private Moteur engine;
 	private Enregistreur recorder;

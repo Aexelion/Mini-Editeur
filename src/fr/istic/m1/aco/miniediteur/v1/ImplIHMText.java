@@ -2,13 +2,15 @@ package fr.istic.m1.aco.miniediteur.v1;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  * Created by 16009566 on 09/11/17.
  */
 public class ImplIHMText implements IHM {
 
-    Map<String,Commande> commandes = new HashMap<>();
+    private Map<String,Commande> commandes = new HashMap<>();
+    private Scanner scan = new Scanner(System.in);
 
     public void executeCommande(String s){
         if (commandes.containsKey(s)){
@@ -32,11 +34,13 @@ public class ImplIHMText implements IHM {
 
     @Override
     public String getText() {
-        return "";
+        String str = scan.nextLine();
+        return str;
     }
 
     @Override
     public int getInt() {
-        return 0;
+        int i = scan.nextInt();
+        return i;
     }
 }

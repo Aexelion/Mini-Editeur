@@ -7,6 +7,10 @@ public class Rejouer implements Commande {
 
     private Enregistreur recorder;
 
+    public Rejouer(Enregistreur recorder){
+        this.recorder = recorder;
+    }
+
     @Override
     public void execute() {
         recorder.rejouer();

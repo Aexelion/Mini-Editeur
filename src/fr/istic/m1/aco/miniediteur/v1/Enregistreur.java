@@ -7,5 +7,5 @@ public interface Enregistreur {
     public void demarrer();
     public void stopper();
     public void rejouer();
-    public void enregistrer(Commande c);
+    public void enregistrer(CommandeEnregistrable c);
 }

@@ -7,6 +7,10 @@ public class Demarrer implements Commande {
 
     private Enregistreur recorder;
 
+    public Demarrer(Enregistreur recorder){
+        this.recorder = recorder;
+    }
+
     @Override
     public void execute() {
         recorder.demarrer();

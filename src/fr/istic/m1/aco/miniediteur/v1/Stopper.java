@@ -7,6 +7,10 @@ public class Stopper implements Commande {
 
     private Enregistreur recorder;
 
+    public Stopper(Enregistreur recorder){
+        this.recorder = recorder;
+    }
+
     @Override
     public void execute() {
         recorder.stopper();

@@ -7,6 +7,10 @@ public class Refaire implements Commande {
 
     private GestionnaireDefaireRefaire gest;
 
+    public Refaire(GestionnaireDefaireRefaire gest){
+        this.gest = gest;
+    }
+
     @Override
     public void execute() {
         gest.refaire();

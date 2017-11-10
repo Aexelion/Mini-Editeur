@@ -42,7 +42,8 @@ public class ImplMoteur implements Moteur {
         ajout = pp.getTxt();
         txt = txt.substring(0,debutSel) + ajout + txt.substring(finSel);
 
-        sel.setDeb(finSel); //Place le curseur de sélection après le texte qui vient d'être inséré
+        sel.setFin(debutSel + ajout.length()); //Place le curseur de sélection après le texte qui vient d'être inséré
+        sel.setDeb(finSel);
 
         buf.setTxt(txt);
     }
@@ -55,7 +56,9 @@ public class ImplMoteur implements Moteur {
 
         txt = txt.substring(0,debutSel) + s + txt.substring(finSel);
 
-        sel.setDeb(finSel); //Place le curseur de sélection après le texte qui vient d'être inséré
+
+        sel.setFin(debutSel + s.length()); //Place le curseur de sélection après le texte qui vient d'être inséré
+        sel.setDeb(finSel);
 
         buf.setTxt(txt);
     }
