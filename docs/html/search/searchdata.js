@@ -3,8 +3,8 @@ var indexSectionsWithContent =
   0: "bcdefgimprs",
   1: "bcdegimprs",
   2: "f",
-  3: "c",
-  4: "egs"
+  3: "cdegi",
+  4: "degrs"
 };
 
 var indexSectionNames =

@@ -2,6 +2,11 @@
 \label{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Inserer}\index{fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Inserer@{fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Inserer}}
 
 
+Classe contrôlant le fonctionnement de la commande d\textquotesingle{}insertion de texte dans l\textquotesingle{}éditeur.  
+
+
+
+
 Graphe d\textquotesingle{}héritage de fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Inserer\+:
 \nopagebreak
 \begin{figure}[H]
@@ -23,20 +28,75 @@ Graphe de collaboration de fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Inserer\+:
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Inserer_acbf4c75249a1836789c8ab4dcc7dcb0d}\label{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Inserer_acbf4c75249a1836789c8ab4dcc7dcb0d}} 
 void \hyperlink{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Inserer_acbf4c75249a1836789c8ab4dcc7dcb0d}{execute} ()
-\begin{DoxyCompactList}\small\item\em Méthode commune aux commandes devant implémenter leur action quand déclenchée par l\textquotesingle{}\hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1IHM}{I\+HM}. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Inserer_a4091c321237a04db9509b01e2baf768f}\label{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Inserer_a4091c321237a04db9509b01e2baf768f}} 
-\hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Memento}{Memento} {\bfseries get\+Memento} ()
-\item 
-\mbox{\Hypertarget{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Inserer_a1978002e0aa031a5293ff3263c49fe94}\label{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Inserer_a1978002e0aa031a5293ff3263c49fe94}} 
-void {\bfseries set\+Memento} (\hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Memento}{Memento} m)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Implémentation de la commande d\textquotesingle{}insertion de texte. \end{DoxyCompactList}\item 
+\hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Memento}{Memento} \hyperlink{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Inserer_a4091c321237a04db9509b01e2baf768f}{get\+Memento} ()
+\begin{DoxyCompactList}\small\item\em Implémentation de la méthode permettant de récupérer un \hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Memento}{Memento} dans lequel sera sauvegardé l\textquotesingle{}état. \end{DoxyCompactList}\item 
+void \hyperlink{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Inserer_a1978002e0aa031a5293ff3263c49fe94}{set\+Memento} (\hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Memento}{Memento} m)
+\begin{DoxyCompactList}\small\item\em Implémentation de la méthode permettant d\textquotesingle{}éditer le \hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Memento}{Memento} pour sauvegarder l\textquotesingle{}état d\textquotesingle{}une commande d\textquotesingle{}insertion. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
-Created by 16009566 on 13/10/17. 
+Classe contrôlant le fonctionnement de la commande d\textquotesingle{}insertion de texte dans l\textquotesingle{}éditeur. 
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Inserer_acbf4c75249a1836789c8ab4dcc7dcb0d}\label{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Inserer_acbf4c75249a1836789c8ab4dcc7dcb0d}} 
+\index{fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Inserer@{fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Inserer}!execute@{execute}}
+\index{execute@{execute}!fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Inserer@{fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Inserer}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Inserer.\+execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Implémentation de la commande d\textquotesingle{}insertion de texte. 
+
+Action enregistrable et donc pouvant faire l\textquotesingle{}objet d\textquotesingle{}un défaire refaire. Fait appel à l\textquotesingle{}implémentation de la dite action du moteur. Est donc \char`\"{}implementation-\/dependent\char`\"{} du moteur. 
+
+Implémente \hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Commande_a87a8a55bac4e81e32339248f79f7de4f}{fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Commande}.
+
+\mbox{\Hypertarget{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Inserer_a4091c321237a04db9509b01e2baf768f}\label{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Inserer_a4091c321237a04db9509b01e2baf768f}} 
+\index{fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Inserer@{fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Inserer}!get\+Memento@{get\+Memento}}
+\index{get\+Memento@{get\+Memento}!fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Inserer@{fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Inserer}}
+\subsubsection{\texorpdfstring{get\+Memento()}{getMemento()}}
+{\footnotesize\ttfamily \hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Memento}{Memento} fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Inserer.\+get\+Memento (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Implémentation de la méthode permettant de récupérer un \hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Memento}{Memento} dans lequel sera sauvegardé l\textquotesingle{}état. 
+
+\begin{DoxyReturn}{Renvoie}
+Un \hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Memento}{Memento} de sauvegarde de l\textquotesingle{}état d\textquotesingle{}une commande d\textquotesingle{}insertion 
+\end{DoxyReturn}
+
+
+Implémente \hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Enregistrable_aadf173c765d103d3924bbb688c45abb6}{fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Enregistrable}.
+
+\mbox{\Hypertarget{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Inserer_a1978002e0aa031a5293ff3263c49fe94}\label{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Inserer_a1978002e0aa031a5293ff3263c49fe94}} 
+\index{fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Inserer@{fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Inserer}!set\+Memento@{set\+Memento}}
+\index{set\+Memento@{set\+Memento}!fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Inserer@{fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Inserer}}
+\subsubsection{\texorpdfstring{set\+Memento()}{setMemento()}}
+{\footnotesize\ttfamily void fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Inserer.\+set\+Memento (\begin{DoxyParamCaption}\item[{\hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Memento}{Memento}}]{m }\end{DoxyParamCaption})}
+
+
+
+Implémentation de la méthode permettant d\textquotesingle{}éditer le \hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Memento}{Memento} pour sauvegarder l\textquotesingle{}état d\textquotesingle{}une commande d\textquotesingle{}insertion. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em m} & un \hyperlink{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1MementoInserer}{Memento\+Inserer} qui sera édité \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\+Argument\+Exception} & Levée dans le cas où le \hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Memento}{Memento} fourni n\textquotesingle{}est pas un \hyperlink{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1MementoInserer}{Memento\+Inserer} \\
+\hline
+\end{DoxyExceptions}
+
+
+Implémente \hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Enregistrable_a949bb6784743800c2d743def265f41b1}{fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Enregistrable}.
+
+
 
 La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
 \item 
-src/fr/istic/m1/aco/miniediteur/v1/Inserer.\+java\end{DoxyCompactItemize}
+src/fr/istic/m1/aco/miniediteur/v1/\hyperlink{Inserer_8java}{Inserer.\+java}\end{DoxyCompactItemize}

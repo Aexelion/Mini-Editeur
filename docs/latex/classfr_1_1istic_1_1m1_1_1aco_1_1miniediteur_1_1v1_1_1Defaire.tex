@@ -2,8 +2,12 @@
 \label{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Defaire}\index{fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Defaire@{fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Defaire}}
 
 
-Graphe d\textquotesingle{}héritage de fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Defaire\+:
-\nopagebreak
+Classe contrôlant le fonctionnement de la fonctionnalité permettant de Défaire dans un \char`\"{}défaire-\/refaire\char`\"{}.  
+
+
+
+
+Graphe d\textquotesingle{}héritage de fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Defaire\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Graphe d\textquotesingle{}héritage de fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.
 \end{figure}
 
 
-Graphe de collaboration de fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Defaire\+:
-\nopagebreak
+Graphe de collaboration de fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Defaire\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,14 +26,35 @@ Graphe de collaboration de fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Defaire\+:
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Defaire_a3b8c0beab28336ae060284fdf4a78a52}\label{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Defaire_a3b8c0beab28336ae060284fdf4a78a52}} 
 void \hyperlink{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Defaire_a3b8c0beab28336ae060284fdf4a78a52}{execute} ()
-\begin{DoxyCompactList}\small\item\em Méthode commune aux commandes devant implémenter leur action quand déclenchée par l\textquotesingle{}\hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1IHM}{I\+HM}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Implémentation permettant d\textquotesingle{}effectuer l\textquotesingle{}action défaire du \char`\"{}défaire-\/refaire\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
-Created by 16009566 on 20/10/17. 
+Classe contrôlant le fonctionnement de la fonctionnalité permettant de Défaire dans un \char`\"{}défaire-\/refaire\char`\"{}. 
+
+\begin{DoxyNote}{Note}
+Dans la spécification de la version 3 du Mini-\/Éditeur cette commande a été introduite et elle ne doit pas obligatoirement être enregistrée. La fonctionnalité d\textquotesingle{}enregistrement n\textquotesingle{}est donc pas implémentée. 
+\end{DoxyNote}
+
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Defaire_a3b8c0beab28336ae060284fdf4a78a52}\label{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Defaire_a3b8c0beab28336ae060284fdf4a78a52}} 
+\index{fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Defaire@{fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Defaire}!execute@{execute}}
+\index{execute@{execute}!fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Defaire@{fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Defaire}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Defaire.\+execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Implémentation permettant d\textquotesingle{}effectuer l\textquotesingle{}action défaire du \char`\"{}défaire-\/refaire\char`\"{}. 
+
+Fait appel à l\textquotesingle{}implémentation de la dite action du \hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1GestionnaireDefaireRefaire}{Gestionnaire\+Defaire\+Refaire}. Est donc \char`\"{}implementation-\/dependent\char`\"{} du \hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1GestionnaireDefaireRefaire}{Gestionnaire\+Defaire\+Refaire}. 
+
+Implémente \hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Commande_a87a8a55bac4e81e32339248f79f7de4f}{fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Commande}.
+
+
 
 La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
 \item 
-src/fr/istic/m1/aco/miniediteur/v1/Defaire.\+java\end{DoxyCompactItemize}
+src/fr/istic/m1/aco/miniediteur/v1/\hyperlink{Defaire_8java}{Defaire.\+java}\end{DoxyCompactItemize}

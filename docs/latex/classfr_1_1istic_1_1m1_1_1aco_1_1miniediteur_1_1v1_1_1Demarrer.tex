@@ -2,8 +2,12 @@
 \label{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Demarrer}\index{fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Demarrer@{fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Demarrer}}
 
 
-Graphe d\textquotesingle{}héritage de fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Demarrer\+:
-\nopagebreak
+Classe contrôlant le fonctionnement de la fonctionnalité permettant de débuter l\textquotesingle{}enregistrement d\textquotesingle{}une macro.  
+
+
+
+
+Graphe d\textquotesingle{}héritage de fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Demarrer\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Graphe d\textquotesingle{}héritage de fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.
 \end{figure}
 
 
-Graphe de collaboration de fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Demarrer\+:
-\nopagebreak
+Graphe de collaboration de fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Demarrer\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,14 +26,32 @@ Graphe de collaboration de fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Demarrer\+
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Demarrer_a1de3c107a8ee460c70a5b98e6b7edd69}\label{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Demarrer_a1de3c107a8ee460c70a5b98e6b7edd69}} 
 void \hyperlink{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Demarrer_a1de3c107a8ee460c70a5b98e6b7edd69}{execute} ()
-\begin{DoxyCompactList}\small\item\em Méthode commune aux commandes devant implémenter leur action quand déclenchée par l\textquotesingle{}\hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1IHM}{I\+HM}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Implémentation permettant d\textquotesingle{}effectuer l\textquotesingle{}action débutant l\textquotesingle{}enregistrement d\textquotesingle{}une macro. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
-Created by 16009566 on 13/10/17. 
+Classe contrôlant le fonctionnement de la fonctionnalité permettant de débuter l\textquotesingle{}enregistrement d\textquotesingle{}une macro. 
+
+Fonctionnalité introduite dans la spécification de la version 2 du Mini-\/Éditeur. N\textquotesingle{}est pas elle même enregistrable conformément à la spécification pour éviter un empilement d\textquotesingle{}enregistrements qui résulterait en un écrasement des précédents. 
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Demarrer_a1de3c107a8ee460c70a5b98e6b7edd69}\label{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Demarrer_a1de3c107a8ee460c70a5b98e6b7edd69}} 
+\index{fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Demarrer@{fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Demarrer}!execute@{execute}}
+\index{execute@{execute}!fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Demarrer@{fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Demarrer}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Demarrer.\+execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Implémentation permettant d\textquotesingle{}effectuer l\textquotesingle{}action débutant l\textquotesingle{}enregistrement d\textquotesingle{}une macro. 
+
+Fait appel à l\textquotesingle{}implémentation de l\textquotesingle{}enregistremenent. Est donc \char`\"{}implementation-\/dependent\char`\"{} de l\textquotesingle{}\hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Enregistreur}{Enregistreur}. 
+
+Implémente \hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Commande_a87a8a55bac4e81e32339248f79f7de4f}{fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Commande}.
+
+
 
 La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
 \item 
-src/fr/istic/m1/aco/miniediteur/v1/Demarrer.\+java\end{DoxyCompactItemize}
+src/fr/istic/m1/aco/miniediteur/v1/\hyperlink{Demarrer_8java}{Demarrer.\+java}\end{DoxyCompactItemize}

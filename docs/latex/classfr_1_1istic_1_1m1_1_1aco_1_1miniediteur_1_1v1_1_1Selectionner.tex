@@ -25,17 +25,54 @@ Graphe de collaboration de fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Selectionn
 \item 
 \mbox{\Hypertarget{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Selectionner_a746abe8d1a13dbb084f37d4b67fa1261}\label{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Selectionner_a746abe8d1a13dbb084f37d4b67fa1261}} 
 void \hyperlink{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Selectionner_a746abe8d1a13dbb084f37d4b67fa1261}{execute} ()
-\begin{DoxyCompactList}\small\item\em Méthode commune aux commandes devant implémenter leur action quand déclenchée par l\textquotesingle{}\hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1IHM}{I\+HM}. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Selectionner_a93bb9249ee51f501735f6b40d77dc3f3}\label{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Selectionner_a93bb9249ee51f501735f6b40d77dc3f3}} 
-\hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Memento}{Memento} {\bfseries get\+Memento} ()
-\item 
-\mbox{\Hypertarget{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Selectionner_a80d7d18546f239290919a9e602405ffd}\label{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Selectionner_a80d7d18546f239290919a9e602405ffd}} 
-void {\bfseries set\+Memento} (\hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Memento}{Memento} m)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Opération commune aux commandes devant implémenter leur action quand déclenchée par l\textquotesingle{}\hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1IHM}{I\+HM}. \end{DoxyCompactList}\item 
+\hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Memento}{Memento} \hyperlink{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Selectionner_a93bb9249ee51f501735f6b40d77dc3f3}{get\+Memento} ()
+\begin{DoxyCompactList}\small\item\em Opération permettant d\textquotesingle{}obtenir une copie de l\textquotesingle{}état d\textquotesingle{}une opération requérant une sauvegarde pour pouvoir être refaire ultérieurement. \end{DoxyCompactList}\item 
+void \hyperlink{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Selectionner_a80d7d18546f239290919a9e602405ffd}{set\+Memento} (\hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Memento}{Memento} m)
+\begin{DoxyCompactList}\small\item\em Opération permettant de réinitialiser la commande par rapport à un état précédent donné sous la forme d\textquotesingle{}un \hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Memento}{Memento}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
 Created by 16009566 on 13/10/17. 
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Selectionner_a93bb9249ee51f501735f6b40d77dc3f3}\label{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Selectionner_a93bb9249ee51f501735f6b40d77dc3f3}} 
+\index{fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Selectionner@{fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Selectionner}!get\+Memento@{get\+Memento}}
+\index{get\+Memento@{get\+Memento}!fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Selectionner@{fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Selectionner}}
+\subsubsection{\texorpdfstring{get\+Memento()}{getMemento()}}
+{\footnotesize\ttfamily \hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Memento}{Memento} fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Selectionner.\+get\+Memento (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Opération permettant d\textquotesingle{}obtenir une copie de l\textquotesingle{}état d\textquotesingle{}une opération requérant une sauvegarde pour pouvoir être refaire ultérieurement. 
+
+\begin{DoxyReturn}{Renvoie}
+Une instance implémentant \hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Memento}{Memento} qui est une copie de l\textquotesingle{}état de la commande. 
+\end{DoxyReturn}
+
+
+Implémente \hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Enregistrable_aadf173c765d103d3924bbb688c45abb6}{fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Enregistrable}.
+
+\mbox{\Hypertarget{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Selectionner_a80d7d18546f239290919a9e602405ffd}\label{classfr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Selectionner_a80d7d18546f239290919a9e602405ffd}} 
+\index{fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Selectionner@{fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Selectionner}!set\+Memento@{set\+Memento}}
+\index{set\+Memento@{set\+Memento}!fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Selectionner@{fr\+::istic\+::m1\+::aco\+::miniediteur\+::v1\+::\+Selectionner}}
+\subsubsection{\texorpdfstring{set\+Memento()}{setMemento()}}
+{\footnotesize\ttfamily void fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Selectionner.\+set\+Memento (\begin{DoxyParamCaption}\item[{\hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Memento}{Memento}}]{m }\end{DoxyParamCaption})}
+
+
+
+Opération permettant de réinitialiser la commande par rapport à un état précédent donné sous la forme d\textquotesingle{}un \hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Memento}{Memento}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em m} & un \hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Memento}{Memento} décrivant un état précédent de la commande sur lequel revenir \\
+\hline
+\end{DoxyParams}
+
+
+Implémente \hyperlink{interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Enregistrable_a949bb6784743800c2d743def265f41b1}{fr.\+istic.\+m1.\+aco.\+miniediteur.\+v1.\+Enregistrable}.
+
+
 
 La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
 \item 

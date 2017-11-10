@@ -1,7 +1,14 @@
+/**
+ * @file Inserer.java
+ * @author Dorian "Aexelion" DUMANGET
+ * @author Corentin "Heartbroken-Git" CHÉDOTAL
+ * @copyright LPRAB 1.0
+ */
+
 package fr.istic.m1.aco.miniediteur.v1;
 
 /**
- * Created by 16009566 on 13/10/17.
+ * @brief Classe contrôlant le fonctionnement de la commande d'insertion de texte dans l'éditeur
  */
 public class Inserer implements Commande, Enregistrable {
 
@@ -11,6 +18,10 @@ public class Inserer implements Commande, Enregistrable {
     private MementoInserer m;
     private boolean flagMemento = false;
 
+	/**
+	 * @brief Implémentation de la commande d'insertion de texte
+	 * @details Action enregistrable et donc pouvant faire l'objet d'un défaire refaire. Fait appel à l'implémentation de la dite action du moteur. Est donc "implementation-dependent" du moteur.
+	 */
     @Override
     public void execute() {
         String str;
@@ -25,11 +36,20 @@ public class Inserer implements Commande, Enregistrable {
         recorder.enregistrer(this);
     }
 
+	/**
+	 * @brief Implémentation de la méthode permettant de récupérer un Memento dans lequel sera sauvegardé l'état
+	 * @return Un Memento de sauvegarde de l'état d'une commande d'insertion
+	 */
     @Override
     public Memento getMemento() {
         return m;
     }
 
+	/**
+	 * @brief Implémentation de la méthode permettant d'éditer le Memento pour sauvegarder l'état d'une commande d'insertion
+	 * @param m un MementoInserer qui sera édité
+	 * @exception IllegalArgumentException Levée dans le cas où le Memento fourni n'est pas un MementoInserer
+	 */
     @Override
     public void setMemento(Memento m) {
         if (m instanceof MementoInserer){
