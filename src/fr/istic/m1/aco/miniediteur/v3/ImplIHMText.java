@@ -1,4 +1,4 @@
-package fr.istic.m1.aco.miniediteur.v1;
+package fr.istic.m1.aco.miniediteur.v3;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,10 +9,15 @@ import java.util.Scanner;
  */
 public class ImplIHMText implements IHM {
 
-    private Map<String,Commande> commandes = new HashMap<>();
-    private Scanner scan = new Scanner(System.in);
+    private Map<String,Commande> commandes;
+    private Scanner scan;
 
-    public void executeCommande(String s){
+    public ImplIHMText() {
+        this.commandes = new HashMap<>();
+        this.scan = new Scanner(System.in);
+    }
+
+    private void executeCommande(String s){
         if (commandes.containsKey(s)){
             commandes.get(s).execute();
         }else{
@@ -20,7 +25,7 @@ public class ImplIHMText implements IHM {
         }
     }
 
-    public void listCommande(){
+    private void listCommande(){
         if (!commandes.isEmpty()) {
             int i = 0;
             for (Map.Entry<String, Commande> c : commandes.entrySet()) {
@@ -29,6 +34,21 @@ public class ImplIHMText implements IHM {
             }
         }else{
             System.out.println("Aucune commande existante");
+        }
+    }
+
+    public void execution(){
+        System.out.println("Choisir une commande a executuer.");
+        listCommande();
+        System.out.println("Entrer 'Exit' pour quitter l'editeur");
+        String cmd = scan.nextLine();
+
+        while (cmd != "Exit"){
+            executeCommande(cmd);
+            System.out.println("Choisir une commande a executuer.");
+            listCommande();
+            System.out.println("Entrer 'Exit' pour quitter l'editeur");
+            cmd = scan.nextLine();
         }
     }
 

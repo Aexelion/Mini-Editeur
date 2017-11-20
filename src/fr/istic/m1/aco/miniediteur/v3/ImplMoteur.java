@@ -1,4 +1,4 @@
-package fr.istic.m1.aco.miniediteur.v1;
+package fr.istic.m1.aco.miniediteur.v3;
 
 /**
  * Created by 16009566 on 20/10/17.
@@ -8,6 +8,12 @@ public class ImplMoteur implements Moteur {
     private Buffer buf;
     private Selection sel;
     private PressePapier pp;
+
+    public ImplMoteur(){
+        this.buf = new Buffer("");
+        this.sel = new Selection(0,0);
+        this.pp = new PressePapier("");
+    }
 
     @Override
     public void couper() throws UnsupportedOperationException {
@@ -67,5 +73,27 @@ public class ImplMoteur implements Moteur {
     public void selectionner(int debut, int fin) throws UnsupportedOperationException {
         sel.setDeb(debut);
         sel.setFin(fin);
+    }
+
+    @Override
+    public void charger(Buffer b, Selection s, PressePapier p) {
+        this.buf = b;
+        this.sel = s;
+        this.pp = p;
+    }
+
+    @Override
+    public Buffer getbuf() {
+        return buf;
+    }
+
+    @Override
+    public Selection getSel() {
+        return sel;
+    }
+
+    @Override
+    public PressePapier getPP() {
+        return pp;
     }
 }

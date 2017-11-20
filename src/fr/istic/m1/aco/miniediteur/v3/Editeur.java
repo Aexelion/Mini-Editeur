@@ -2,7 +2,7 @@
  * @(#) Editeur.java
  */
 
-package fr.istic.m1.aco.miniediteur.v1;
+package fr.istic.m1.aco.miniediteur.v3;
 
 public class Editeur
 {

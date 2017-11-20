@@ -1,4 +1,4 @@
-package fr.istic.m1.aco.miniediteur.v1;
+package fr.istic.m1.aco.miniediteur.v3;
 
 /**
  * Created by 16009566 on 20/10/17.
@@ -7,6 +7,11 @@ public class Selection {
 
     private int deb = 0;
     private int fin = 0;
+
+    public Selection(int d, int f){
+        this.deb = d;
+        this.fin = f;
+    }
 
     public int getDeb(){
         return deb;
@@ -22,6 +27,11 @@ public class Selection {
 
     public void setFin(int fin) {
         this.fin = fin;
+    }
+
+    @Override
+    public Selection clone(){
+        return new Selection(deb, fin);
     }
 
 
