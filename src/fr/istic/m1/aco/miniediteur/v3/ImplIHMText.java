@@ -11,13 +11,19 @@ public class ImplIHMText implements IHM {
 
     private Map<String,Commande> commandes;
     private Scanner scan;
+    private Affiche affiche;
 
-    public ImplIHMText() {
+    public ImplIHMText(Affiche a) {
         this.commandes = new HashMap<>();
         this.scan = new Scanner(System.in);
+        this.affiche = a;
     }
 
-    private void executeCommande(String s){
+    public void addCmd(String s, Commande c) {
+
+    }
+
+    private void executeCommande(String s) {
         if (commandes.containsKey(s)){
             commandes.get(s).execute();
         }else{
@@ -25,7 +31,7 @@ public class ImplIHMText implements IHM {
         }
     }
 
-    private void listCommande(){
+    private void listCommande() {
         if (!commandes.isEmpty()) {
             int i = 0;
             for (Map.Entry<String, Commande> c : commandes.entrySet()) {
@@ -37,7 +43,7 @@ public class ImplIHMText implements IHM {
         }
     }
 
-    public void execution(){
+    public void execution() {
         System.out.println("Choisir une commande a executuer.");
         listCommande();
         System.out.println("Entrer 'Exit' pour quitter l'editeur");
@@ -48,6 +54,7 @@ public class ImplIHMText implements IHM {
             System.out.println("Choisir une commande a executuer.");
             listCommande();
             System.out.println("Entrer 'Exit' pour quitter l'editeur");
+            System.out.println(affiche.execute());
             cmd = scan.nextLine();
         }
     }

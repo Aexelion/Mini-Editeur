@@ -10,12 +10,10 @@ public class ImplGestionnaire implements GestionnaireDefaireRefaire{
     private class Etat{
         final Buffer buf;
         final Selection sel;
-        final PressePapier pp;
 
-        public Etat(Buffer b, Selection s, PressePapier p){
+        public Etat(Buffer b, Selection s){
             this.buf = b;
             this.sel = s;
-            this.pp = p;
         }
     }
 
@@ -33,7 +31,7 @@ public class ImplGestionnaire implements GestionnaireDefaireRefaire{
     public void defaire() {
         if (!pileFait.isEmpty()){
             Etat e = pileFait.pop();
-            engine.charger(e.buf, e.sel, e.pp);
+            engine.charger(e.buf, e.sel);
             pileARefaire.add(e);
         }
     }
@@ -42,7 +40,7 @@ public class ImplGestionnaire implements GestionnaireDefaireRefaire{
     public void refaire() {
         if (!pileARefaire.isEmpty()){
             Etat e = pileARefaire.pop();
-            engine.charger(e.buf, e.sel, e.pp);
+            engine.charger(e.buf, e.sel);
             pileFait.add(e);
         }
     }
@@ -55,9 +53,8 @@ public class ImplGestionnaire implements GestionnaireDefaireRefaire{
 
         Buffer newBuf = engine.getbuf().clone();
         Selection newSel = engine.getSel().clone();
-        PressePapier newPP = engine.getPP().clone();
 
-        Etat tmp = new Etat(newBuf, newSel, newPP);
+        Etat tmp = new Etat(newBuf, newSel);
         pileFait.push(tmp);
     }
 }

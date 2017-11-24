@@ -16,6 +16,16 @@ public class ImplMoteur implements Moteur {
     }
 
     @Override
+    public String affiche() throws UnsupportedOperationException {
+        String txt = buf.getTxt();
+        int deb = sel.getDeb(), fin = sel.getFin();
+
+        String res = txt.substring(0,deb) + "[" + txt.substring(deb, fin) + "[" + txt.substring(fin);
+
+        return res;
+    }
+
+    @Override
     public void couper() throws UnsupportedOperationException {
         String txt = buf.getTxt();
         int debutSel = sel.getDeb();
@@ -76,10 +86,9 @@ public class ImplMoteur implements Moteur {
     }
 
     @Override
-    public void charger(Buffer b, Selection s, PressePapier p) {
+    public void charger(Buffer b, Selection s) {
         this.buf = b;
         this.sel = s;
-        this.pp = p;
     }
 
     @Override
