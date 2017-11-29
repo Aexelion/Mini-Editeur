@@ -37,6 +37,8 @@ public class ImplMoteur implements Moteur {
         sel.setFin(debutSel); //Place le curseur de sélection la où le texte a été couper
 
         buf.setTxt(txt);
+
+        this.verifSel();
     }
 
     @Override
@@ -46,6 +48,8 @@ public class ImplMoteur implements Moteur {
         int finSel = sel.getFin();
 
         pp.setTxt(txt.substring(debutSel,finSel)); //Ne vérifie pas si la sous-chaine est vide. Récupère la chaine [debut, fin[
+
+        this.verifSel();
     }
 
     @Override
@@ -59,9 +63,11 @@ public class ImplMoteur implements Moteur {
         txt = txt.substring(0,debutSel) + ajout + txt.substring(finSel);
 
         sel.setFin(debutSel + ajout.length()); //Place le curseur de sélection après le texte qui vient d'être inséré
-        sel.setDeb(finSel);
+        sel.setDeb(debutSel + ajout.length());
 
         buf.setTxt(txt);
+
+        this.verifSel();
     }
 
     @Override
@@ -74,21 +80,62 @@ public class ImplMoteur implements Moteur {
 
 
         sel.setFin(debutSel + s.length()); //Place le curseur de sélection après le texte qui vient d'être inséré
-        sel.setDeb(finSel);
+        sel.setDeb(debutSel + s.length());
 
         buf.setTxt(txt);
+
+        this.verifSel();
     }
 
     @Override
     public void selectionner(int debut, int fin) throws UnsupportedOperationException {
         sel.setDeb(debut);
         sel.setFin(fin);
+
+        this.verifSel();
     }
 
     @Override
     public void charger(Buffer b, Selection s) {
         this.buf = b;
         this.sel = s;
+
+        this.verifSel();
+    }
+
+    private void verifSel() {
+        this.verifDeb();
+        this.verifFin();
+
+        int deb = sel.getDeb();
+        int fin = sel.getFin();
+
+        if (deb > fin) {
+            sel.setDeb(fin);
+            sel.setFin(deb);
+        }
+    }
+
+    private void verifDeb() {
+        int deb = sel.getDeb();
+        int bufLen = buf.getTxt().length();
+
+        if (deb < 0) {
+            sel.setDeb(0);
+        } else if (deb > bufLen) {
+            sel.setDeb(bufLen);
+        }
+    }
+
+    private void verifFin() {
+        int fin = sel.getFin();
+        int bufLen = buf.getTxt().length();
+
+        if (fin < 0) {
+            sel.setFin(0);
+        } else if (fin > bufLen) {
+            sel.setFin(bufLen);
+        }
     }
 
     @Override

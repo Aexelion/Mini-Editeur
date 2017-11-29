@@ -17,9 +17,11 @@ public class ImplGestionnaire implements GestionnaireDefaireRefaire{
         }
     }
 
-    Moteur engine;
-    Stack<Etat> pileFait;
-    Stack<Etat> pileARefaire;
+    private Moteur engine;
+    private Stack<Etat> pileFait;
+    private Stack<Etat> pileARefaire;
+
+    private final Etat init = new Etat(new Buffer(""), new Selection(0,0));
 
     public ImplGestionnaire(Moteur engine){
         this.engine = engine;
@@ -33,6 +35,8 @@ public class ImplGestionnaire implements GestionnaireDefaireRefaire{
             Etat e = pileFait.pop();
             engine.charger(e.buf, e.sel);
             pileARefaire.add(e);
+        } else {
+            engine.charger(init.buf, init.sel);
         }
     }
 

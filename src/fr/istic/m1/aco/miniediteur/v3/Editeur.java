@@ -44,17 +44,30 @@ public class Editeur {
 		this.couper = new Couper(engine, recorder, gest);
 		this.selectionner = new Selectionner(engine, gui, recorder, gest);
 		this.inserer = new Inserer(engine, gui, recorder, gest);
+
+		gui.addCmd("Coller",		this.coller);
+		gui.addCmd("Copier",		this.copier);
+		gui.addCmd("Couper",		this.couper);
+		gui.addCmd("Selectionner",	this.selectionner);
+		gui.addCmd("Inserer",		this.inserer);
 	}
 
 	private void createV2(){
 		this.demarrer = new Demarrer(recorder);
 		this.stopper = new Stopper(recorder);
 		this.rejouer = new Rejouer(recorder);
+
+		gui.addCmd("Demarrer",		this.demarrer);
+		gui.addCmd("Stopper",		this.stopper);
+		gui.addCmd("Rejouer",		this.rejouer);
 	}
 
 	private void createV3(){
 		this.defaire = new Defaire(gest);
 		this.refaire = new Refaire(gest);
+
+		gui.addCmd("Defaire",		this.defaire);
+		gui.addCmd("Refaire",		this.refaire);
 	}
 
 
@@ -68,7 +81,7 @@ public class Editeur {
 
 		Editeur editeur = new Editeur(gui, engine, recorder, gest);
 
-
+		gui.execution();
 	}
 }
 
