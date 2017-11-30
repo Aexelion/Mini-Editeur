@@ -7,19 +7,19 @@ public class Copier implements CommandeEnregistrable {
 
     private Moteur engine;
     private Enregistreur recorder; //V2
-    private GestionnaireDefaireRefaire gest; //V3
+    //private GestionnaireDefaireRefaire gest; //V3
 
     public Copier(Moteur engine, Enregistreur recorder, GestionnaireDefaireRefaire gest){
         this.engine = engine;
         this.recorder = recorder; //V2
-        this.gest = gest; //V3
+        //this.gest = gest; //V3
     }
 
     @Override
     public void execute() {
         engine.copier();
         recorder.enregistrer(this); //V2
-        gest.appelCmd(this); //V3
+        //gest.appelCmd(this); //V3
     }
 
     @Override

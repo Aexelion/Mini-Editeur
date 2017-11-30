@@ -22,11 +22,13 @@ public class ImplGestionnaire implements GestionnaireDefaireRefaire{
     private Stack<Etat> pileARefaire;
 
     private final Etat init = new Etat(new Buffer(""), new Selection(0,0));
+    private Etat courant;
 
     public ImplGestionnaire(Moteur engine){
         this.engine = engine;
         pileFait = new Stack<>();
         pileARefaire = new Stack<>();
+        courant = init;
     }
 
     @Override
@@ -34,9 +36,11 @@ public class ImplGestionnaire implements GestionnaireDefaireRefaire{
         if (!pileFait.isEmpty()){
             Etat e = pileFait.pop();
             engine.charger(e.buf, e.sel);
-            pileARefaire.add(e);
+            pileARefaire.add(courant);
+            courant = e;
         } else {
             engine.charger(init.buf, init.sel);
+            courant = init;
         }
     }
 
@@ -45,7 +49,8 @@ public class ImplGestionnaire implements GestionnaireDefaireRefaire{
         if (!pileARefaire.isEmpty()){
             Etat e = pileARefaire.pop();
             engine.charger(e.buf, e.sel);
-            pileFait.add(e);
+            pileFait.add(courant);
+            courant = e;
         }
     }
 
@@ -59,6 +64,7 @@ public class ImplGestionnaire implements GestionnaireDefaireRefaire{
         Selection newSel = engine.getSel().clone();
 
         Etat tmp = new Etat(newBuf, newSel);
-        pileFait.push(tmp);
+        pileFait.push(courant);
+        courant = tmp;
     }
 }
