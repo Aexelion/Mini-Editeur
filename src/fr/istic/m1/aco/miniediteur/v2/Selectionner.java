@@ -1,4 +1,4 @@
-package fr.istic.m1.aco.miniediteur.v3;
+package fr.istic.m1.aco.miniediteur.v2;
 
 /**
  * Created by 16009566 on 13/10/17.
@@ -10,13 +10,11 @@ public class Selectionner implements CommandeEnregistrable {
     private Enregistreur recorder; //V2
     private MementoSelectionner m; //V2
     private boolean flagMemento = false; //V2
-    private GestionnaireDefaireRefaire gest; //V3
 
-    public Selectionner(Moteur engine, IHM gui, Enregistreur recorder, GestionnaireDefaireRefaire gest){
+    public Selectionner(Moteur engine, IHM gui, Enregistreur recorder){
         this.engine = engine;
         this.recorder = recorder; //V2
         this.gui = gui;
-        this.gest = gest; //V3
     }
 
     @Override
@@ -34,7 +32,6 @@ public class Selectionner implements CommandeEnregistrable {
         engine.selectionner(deb, fin);
         m = new MementoSelectionner(deb,fin); //V2
         recorder.enregistrer(this); //V2
-        gest.appelCmd(this); //V3
     }
 
     @Override

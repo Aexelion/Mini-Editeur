@@ -1,25 +1,22 @@
-package fr.istic.m1.aco.miniediteur.v3;
+package fr.istic.m1.aco.miniediteur.v2;
 
 /**
  * Created by 16009566 on 13/10/17.
  */
-public class Copier implements CommandeEnregistrable {
+public class Coller implements CommandeEnregistrable {
 
     private Moteur engine;
     private Enregistreur recorder; //V2
-    //private GestionnaireDefaireRefaire gest; //V3
 
-    public Copier(Moteur engine, Enregistreur recorder/*, GestionnaireDefaireRefaire gest*/){
+    public Coller(Moteur engine, Enregistreur recorder){
         this.engine = engine;
         this.recorder = recorder; //V2
-        //this.gest = gest; //V3
     }
 
     @Override
     public void execute() {
-        engine.copier();
+        engine.coller();
         recorder.enregistrer(this); //V2
-        //gest.appelCmd(this); //V3
     }
 
     @Override
@@ -29,6 +26,5 @@ public class Copier implements CommandeEnregistrable {
 
     @Override
     public void setMemento(Memento m) { //V2
-
     }
 }

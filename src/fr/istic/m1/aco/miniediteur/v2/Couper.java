@@ -1,22 +1,19 @@
-package fr.istic.m1.aco.miniediteur.v3;
+package fr.istic.m1.aco.miniediteur.v2;
 
 public class Couper implements CommandeEnregistrable {
-	
+
 	private Moteur engine;
 	private Enregistreur recorder; //V2
-	private GestionnaireDefaireRefaire gest; //V3
 
-	public Couper(Moteur engine, Enregistreur recorder, GestionnaireDefaireRefaire gest){
+	public Couper(Moteur engine, Enregistreur recorder){
 		this.engine = engine;
 		this.recorder = recorder; //V2
-		this.gest = gest; //V3
 	}
 
 	@Override
 	public void execute() {
 		engine.couper();
 		recorder.enregistrer(this); //V2
-		gest.appelCmd(this); //V3
 	}
 
 	@Override
