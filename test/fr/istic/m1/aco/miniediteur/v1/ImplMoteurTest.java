@@ -272,10 +272,10 @@ public class ImplMoteurTest {
 		Buffer buf = new Buffer("Testing148/*-+\"Test");
 		Selection sel = new Selection(0,0);
 		engine.charger(buf, sel);
-		assertTrue(engine.getbuf().getText().equals("Testing148/*-+\"Test"));
+		assertTrue(engine.getbuf().getTxt().equals("Testing148/*-+\"Test"));
 		
-		Buffer buf = new Buffer("Testing148/*-+\"Test");
-		Selection sel = new Selection(-84, -89);
+		buf = new Buffer("Testing148/*-+\"Test");
+		sel = new Selection(-84, -89);
 		engine.charger(buf, sel);
 		assertTrue(engine.getSel().getDeb() == 0 && engine.getSel().getFin() == 0);
 		
