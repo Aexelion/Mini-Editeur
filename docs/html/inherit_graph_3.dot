@@ -1,7 +1,0 @@
-digraph "Graphe hiérarchique des classes"
-{
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  rankdir="LR";
-  Node0 [label="fr.istic.m1.aco.miniediteur.v1.\lEnregistreur",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interfacefr_1_1istic_1_1m1_1_1aco_1_1miniediteur_1_1v1_1_1Enregistreur.html",tooltip="Interface décrivant les actions d&#39;enregistrement de macros. "];
-}
