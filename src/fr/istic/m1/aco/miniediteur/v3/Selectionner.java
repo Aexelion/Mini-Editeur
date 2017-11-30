@@ -43,7 +43,7 @@ public class Selectionner implements CommandeEnregistrable {
     }
 
     @Override
-    public void setMemento(Memento m) { //V2
+    public void setMemento(Memento m) throws IllegalArgumentException { //V2
         if (m instanceof MementoSelectionner){
             this.m = (MementoSelectionner) m;
             flagMemento = true;
