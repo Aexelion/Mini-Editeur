@@ -92,22 +92,32 @@ public class ImplMoteurTest {
 
     @Test
     public void charger() throws Exception {
-
+		Buffer buf = new Buffer("Testing148/*-+\"Test");
+		Selection sel = new Selection(0,0);
+		engine.charger(buf, sel);
+		assertTrue(engine.getbuf().getText().equals("Testing148/*-+\"Test"));
+		
+		Buffer buf = new Buffer("Testing148/*-+\"Test");
+		Selection sel = new Selection(-84, -89);
+		engine.charger(buf, sel);
+		assertTrue(engine.getSel().getDeb() == 0 && engine.getSel().getFin() == 0);
+		
+		
     }
 
     @Test
     public void getbuf() throws Exception {
-
+		// Acesseur, pas de tests ?
     }
 
     @Test
     public void getSel() throws Exception {
-
+		// Accesseur, pas de tests ?
     }
 
     @Test
     public void getPP() throws Exception {
-
+		// Accesseur, pas de tests ?
     }
 
 }
