@@ -16,7 +16,7 @@ public class ImplMoteur implements Moteur {
     }
 
     @Override
-    public String affiche() throws UnsupportedOperationException {
+    public String affiche() {
         String txt = buf.getTxt();
         int deb = sel.getDeb(), fin = sel.getFin();
 
@@ -26,7 +26,7 @@ public class ImplMoteur implements Moteur {
     }
 
     @Override
-    public void couper() throws UnsupportedOperationException {
+    public void couper() {
         String txt = buf.getTxt();
         int debutSel = sel.getDeb();
         int finSel = sel.getFin();
@@ -42,7 +42,7 @@ public class ImplMoteur implements Moteur {
     }
 
     @Override
-    public void copier() throws UnsupportedOperationException {
+    public void copier() {
         String txt = buf.getTxt();
         int debutSel = sel.getDeb();
         int finSel = sel.getFin();
@@ -53,7 +53,7 @@ public class ImplMoteur implements Moteur {
     }
 
     @Override
-    public void coller() throws UnsupportedOperationException {
+    public void coller() {
         String txt = buf.getTxt();
         String ajout = "";
         int debutSel = sel.getDeb();
@@ -71,7 +71,7 @@ public class ImplMoteur implements Moteur {
     }
 
     @Override
-    public void inserer(String s) throws UnsupportedOperationException {
+    public void inserer(String s) {
         String txt = buf.getTxt();
         int debutSel = sel.getDeb();
         int finSel = sel.getFin();
@@ -88,7 +88,7 @@ public class ImplMoteur implements Moteur {
     }
 
     @Override
-    public void selectionner(int debut, int fin) throws UnsupportedOperationException {
+    public void selectionner(int debut, int fin) {
         sel.setDeb(debut);
         sel.setFin(fin);
 

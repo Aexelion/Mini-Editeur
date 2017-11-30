@@ -40,7 +40,7 @@ public class Inserer implements CommandeEnregistrable {
     }
 
     @Override
-    public void setMemento(Memento m) { //V2
+    public void setMemento(Memento m) throws IllegalArgumentException { //V2
         if (m instanceof MementoInserer){
             this.m = (MementoInserer) m;
             flagMemento = true;
