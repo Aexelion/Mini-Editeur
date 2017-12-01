@@ -39,7 +39,7 @@ public class ImplGestionnaire implements GestionnaireDefaireRefaire{
             pileARefaire.add(courant);
             courant = e;
         } else {
-            engine.charger(init.buf, init.sel);
+            engine.charger(new Buffer(""), new Selection(0,0));
             courant = init;
         }
     }

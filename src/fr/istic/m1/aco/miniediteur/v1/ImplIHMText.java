@@ -46,7 +46,7 @@ public class ImplIHMText implements IHM {
 
     @Override
     public void execution() {
-        System.out.println("Choisir une commande a executuer.");
+        System.out.println("Choisir une commande a executer.");
         listCommande();
         System.out.println("Entrer 'Exit' pour quitter l'editeur");
         System.out.println(affiche.execute());
@@ -54,7 +54,7 @@ public class ImplIHMText implements IHM {
 
         while (!cmd.equalsIgnoreCase("Exit")){
             executeCommande(cmd);
-            System.out.println("Choisir une commande a executuer.");
+            System.out.println("Choisir une commande a executer.");
             listCommande();
             System.out.println("Entrer 'Exit' pour quitter l'editeur");
             System.out.println(affiche.execute());
