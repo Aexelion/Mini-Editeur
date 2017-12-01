@@ -12,7 +12,8 @@ public class SelectionnerTest {
 	@Before
 	public void setUp() {
 		Moteur engine = new ImplMoteur();
-		IHM gui = new ImplIHMText();
+		Affiche a = new Affiche(engine);
+		IHM gui = new ImplIHMText(a);
 		Enregistreur recorder = new ImplEnregistreur();
 		
 		tested = new Selectionner(engine, gui, recorder);
@@ -22,10 +23,11 @@ public class SelectionnerTest {
 	public void setMementoNormalTest() throws Exception {
 		MementoSelectionner m = new MementoSelectionner(1,2);
 		tested.setMemento(m);
-		assertTrue(tested.getMemento().getDeb() == 1 && tested.getMemento().getFin() == 2);
+		MementoSelectionner mementoSel = (MementoSelectionner) tested.getMemento();
+		assertTrue(mementoSel.getDeb() == 1 && mementoSel.getFin() == 2);
 	}
 	
-	@Test (expected = IllegalArgumentException)
+	@Test (expected = IllegalArgumentException.class)
 	public void setMementoMauvaisMemento() throws Exception {
 		MementoInserer m = new MementoInserer("test");
 		tested.setMemento(m);

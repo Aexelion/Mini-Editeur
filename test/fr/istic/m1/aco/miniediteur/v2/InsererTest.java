@@ -12,7 +12,8 @@ public class InsererTest {
 	@Before
 	public void setUp() {
 		Moteur engine = new ImplMoteur();
-		IHM gui = new ImplIHMText();
+		Affiche a = new Affiche(engine);
+		IHM gui = new ImplIHMText(a);
 		Enregistreur recorder = new ImplEnregistreur();
 		
 		tested = new Inserer(engine, gui, recorder);
@@ -22,14 +23,16 @@ public class InsererTest {
 	public void setMementoNormalTest() throws Exception {
 		MementoInserer m = new MementoInserer("test");
 		tested.setMemento(m);
-		assertTrue(tested.getMemento().getText() == "test");
+		MementoInserer mementoIns = (MementoInserer) tested.getMemento();
+		assertTrue(mementoIns.getText() == "test");
 		
-		MementoInserer m = new MementoInserer("");
+		m = new MementoInserer("");
 		tested.setMemento(m);
-		assertTrue(tested.getMemento().getText() == "");
+		mementoIns = (MementoInserer) tested.getMemento();
+		assertTrue(mementoIns.getText() == "");
 	}
 	
-	@Test (expected = IllegalArgumentException)
+	@Test (expected = IllegalArgumentException.class)
 	public void setMementoMauvaisMemento() throws Exception {
 		MementoSelectionner m = new MementoSelectionner(4,2);
 		tested.setMemento(m);
