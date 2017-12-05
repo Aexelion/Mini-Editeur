@@ -281,20 +281,4 @@ public class ImplMoteurTest {
 		
 		
     }
-
-    @Test
-    public void getbuf() throws Exception {
-		// Acesseur, pas de tests ?
-    }
-
-    @Test
-    public void getSel() throws Exception {
-		// Accesseur, pas de tests ?
-    }
-
-    @Test
-    public void getPP() throws Exception {
-		// Accesseur, pas de tests ?
-    }
-
 }

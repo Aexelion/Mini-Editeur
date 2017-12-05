@@ -116,12 +116,72 @@ public class ImplGestionnaireTest {
 
     @Test
     public void refaire() throws Exception {
+        MementoInserer mementoIns = new MementoInserer("123456");
+        MementoSelectionner mementoSel = new MementoSelectionner(0,6);
 
-    }
+        inserer.setMemento(mementoIns);
+        inserer.execute();
+        selectionner.setMemento(mementoSel);
+        selectionner.execute();
+        copier.execute();
 
-    @Test
-    public void appelCmd() throws Exception {
+        Buffer buf = engine.getbuf();
+        Selection sel = engine.getSel();
+        PressePapier pp = engine.getPP();
+        assertTrue(buf.getTxt().equals("123456"));
+        assertTrue(sel.getDeb() == 0 && sel.getFin() == 6);
+        assertTrue(pp.getTxt().equals("123456"));
 
+        gest.defaire();
+        gest.defaire();
+        gest.defaire();
+
+        buf = engine.getbuf();
+        sel = engine.getSel();
+        pp = engine.getPP();
+        assertTrue(buf.getTxt().equals(""));
+        assertTrue(sel.getDeb() == 0 && sel.getFin() == 0);
+        assertTrue(pp.getTxt().equals("123456"));
+
+        gest.refaire();
+
+        buf = engine.getbuf();
+        sel = engine.getSel();
+        pp = engine.getPP();
+        assertTrue(buf.getTxt().equals("123456"));
+        assertTrue(sel.getDeb() == 6 && sel.getFin() == 6);
+        assertTrue(pp.getTxt().equals("123456"));
+
+        gest.refaire();
+
+        buf = engine.getbuf();
+        sel = engine.getSel();
+        pp = engine.getPP();
+        assertTrue(buf.getTxt().equals("123456"));
+        assertTrue(sel.getDeb() == 0 && sel.getFin() == 6);
+        assertTrue(pp.getTxt().equals("123456"));
+
+        gest.defaire();
+
+        buf = engine.getbuf();
+        sel = engine.getSel();
+        pp = engine.getPP();
+        assertTrue(buf.getTxt().equals("123456"));
+        assertTrue(sel.getDeb() == 6 && sel.getFin() == 6);
+        assertTrue(pp.getTxt().equals("123456"));
+
+        mementoSel = new MementoSelectionner(3,5);
+        selectionner.setMemento(mementoSel);
+        selectionner.execute();
+
+        gest.refaire();
+
+        buf = engine.getbuf();
+        sel = engine.getSel();
+        pp = engine.getPP();
+        assertTrue(buf.getTxt().equals("123456"));
+        assertTrue(sel.getDeb() == 3 && sel.getFin() == 5);
+        assertTrue(pp.getTxt().equals("123456"));
     }
 
 }

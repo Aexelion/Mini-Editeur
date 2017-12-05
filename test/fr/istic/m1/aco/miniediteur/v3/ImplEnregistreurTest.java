@@ -1,9 +1,9 @@
-package fr.istic.m1.aco.miniediteur.v2;
+package fr.istic.m1.aco.miniediteur.v3;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 
 public class ImplEnregistreurTest {
@@ -23,12 +23,13 @@ public class ImplEnregistreurTest {
 
 		Affiche a = new Affiche(engine);
 		ImplIHMText gui = new ImplIHMText(a);
+		ImplGestionnaire gest = new ImplGestionnaire(engine);
 
 		copier = new Copier(engine, recorder);
-		couper = new Couper(engine, recorder);
-		coller = new Coller(engine, recorder);
-		inserer = new Inserer(engine, gui, recorder);
-		selectionner = new Selectionner(engine, gui, recorder);
+		couper = new Couper(engine, recorder, gest);
+		coller = new Coller(engine, recorder, gest);
+		inserer = new Inserer(engine, gui, recorder, gest);
+		selectionner = new Selectionner(engine, gui, recorder, gest);
 	}
 
 	@Test
