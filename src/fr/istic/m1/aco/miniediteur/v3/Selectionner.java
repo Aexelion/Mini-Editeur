@@ -1,33 +1,29 @@
-/**
- * @file Selectionner.java
- * @author Dorian "Aexelion" DUMANGET
- * @author Corentin "Heartbroken-Git" CHÉDOTAL
- * @copyright LPRAB 1.0
- */
-
-package fr.istic.m1.aco.miniediteur.v1;
+package fr.istic.m1.aco.miniediteur.v3;
 
 /**
- * @brief Classe implémentant la fonctionnalité permettant de sélectionner 	une partie du texte pour y exécuter d'autres commandes
+ * Created by 16009566 on 13/10/17.
  */
-public class Selectionner implements Commande, Enregistrable {
+public class Selectionner implements CommandeEnregistrable {
 
     private Moteur engine;
     private IHM gui;
-    private Enregistreur recorder;
-    private MementoSelectionner m;
-    private boolean flagMemento = false;
+    private Enregistreur recorder; //V2
+    private MementoSelectionner m; //V2
+    private boolean flagMemento = false; //V2
+    private GestionnaireDefaireRefaire gest;
 
-	
-    /**
-     * @brief Implémentation permettant d'effectuer l'action de slection du texte dans l'éditeur
-     * @details Action enregistrable et donc pouvant faire l'objet d'un défaire refaire. Fait appel à l'implémentation de la dite action du moteur. Est donc "implementation-dependent" du moteur.
-     */
+    public Selectionner(Moteur engine, IHM gui, Enregistreur recorder, GestionnaireDefaireRefaire gest){
+        this.engine = engine;
+        this.recorder = recorder;
+        this.gui = gui;
+        this.gest = gest;
+    }
+
     @Override
     public void execute() {
         int deb;
         int fin;
-        if (!flagMemento){
+        if (!flagMemento){ //V2
             deb = gui.getInt(); //TODO reflechir aux fonctions de gui
             fin = gui.getInt();
         } else {
@@ -36,25 +32,18 @@ public class Selectionner implements Commande, Enregistrable {
             flagMemento = false;
         }
         engine.selectionner(deb, fin);
-        //TODO remplissage du mementoSelectionner
-        recorder.enregistrer(this);
+        m = new MementoSelectionner(deb,fin); //V2
+        recorder.enregistrer(this); //V2
+        gest.appelCmd(this); //V3
     }
 
-	/**
-	 * @brief Implémentation de la méthode permettant de récupérer un Memento dans lequel sera sauvegardé l'état de la sélection
-	 * @return Un Memento de sauvegarde de l'état de la sélection au moment de l'appel de la méthode
-	 */
     @Override
-    public Memento getMemento() {
+    public Memento getMemento() { //V2
         return m;
     }
 
-	/**
-	 * @brief Implémentation de la méthode permettant d'éditer le Memento pour sauvegarder l'état dde la sélection
-	 * @param m un MementoSelectionner qui sera édité
-	 */
     @Override
-    public void setMemento(Memento m) {
+    public void setMemento(Memento m) throws IllegalArgumentException { //V2
         if (m instanceof MementoSelectionner){
             this.m = (MementoSelectionner) m;
             flagMemento = true;

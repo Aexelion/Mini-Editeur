@@ -1,45 +1,42 @@
-/**
- * @file Copier.java
- * @author Dorian "Aexelion" DUMANGET
- * @author Corentin "Heartbroken-Git" CHÉDOTAL
- * @copyright LPRAB 1.0
- */
-
-package fr.istic.m1.aco.miniediteur.v1;
+package fr.istic.m1.aco.miniediteur.v3;
 
 /**
- * @brief Classe contrôlant le fonctionnement de la fonctionnalité permettant de Copier dans un "copié-collé"
+ * Created by 16009566 on 13/10/17.
  */
-public class Copier implements Commande, Enregistrable {
+public class Copier implements CommandeEnregistrable {
 
     private Moteur engine;
-    private Enregistreur recorder;
+    private Enregistreur recorder; //V2
+    //private GestionnaireDefaireRefaire gest; //V3
 
-    /**
-     * @brief Implémentation permettant d'effectuer l'action copier du "copié-collé"
-     * @details Action enregistrable et donc pouvant faire l'objet d'un défaire refaire. Fait appel à l'implémentation de la dite action du moteur. Est donc "implementation-dependent" du moteur.
-     */
+    public Copier(Moteur engine, Enregistreur recorder, GestionnaireDefaireRefaire gest){
+        this.engine = engine;
+        this.recorder = recorder; //V2
+        //this.gest = gest; //V3
+    }
+
     @Override
     public void execute() {
         engine.copier();
-        recorder.enregistrer(this);
+        recorder.enregistrer(this); //V2
+        //gest.appelCmd(this); //V3
     }
 
-    /**
+	/**
      * @brief Implémentation vierge de la méthode getMemento car l'action Copier n'a pas de sauvegarde du texte à copier
      * @note N'ayant pas de sauvegarde du texte à copier pour réutiliser Copier dans une action Refaire avec l'intention de remettre texte précis il faut avoir au préalable enregistrer Selectionner aussi.
      * @return Un null comme Copier n'a pas de sauvegarde
      */
     @Override
-    public Memento getMemento() {
+    public Memento getMemento() { //V2
         return null;
     }
 
-    /**
+	/**
      * @brief Implémentation vierge de la méthode setMemento car l'action Copier n'a pas de sauvegarde du texte à copier
      */
     @Override
-    public void setMemento(Memento m) {
+    public void setMemento(Memento m) { //V2
 
     }
 }

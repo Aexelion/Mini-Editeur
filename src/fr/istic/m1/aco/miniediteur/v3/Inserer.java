@@ -1,39 +1,37 @@
-/**
- * @file Inserer.java
- * @author Dorian "Aexelion" DUMANGET
- * @author Corentin "Heartbroken-Git" CHÉDOTAL
- * @copyright LPRAB 1.0
- */
-
-package fr.istic.m1.aco.miniediteur.v1;
+package fr.istic.m1.aco.miniediteur.v3;
 
 /**
- * @brief Classe contrôlant le fonctionnement de la commande d'insertion de texte dans l'éditeur
+ * Created by 16009566 on 13/10/17.
  */
-public class Inserer implements Commande, Enregistrable {
+public class Inserer implements CommandeEnregistrable {
 
     private Moteur engine;
     private IHM gui;
-    private Enregistreur recorder;
-    private MementoInserer m;
-    private boolean flagMemento = false;
+    private Enregistreur recorder; //V2
+    private MementoInserer m; //V2
+    private boolean flagMemento = false; //V2
+    private GestionnaireDefaireRefaire gest; //V3
 
-	/**
-	 * @brief Implémentation de la commande d'insertion de texte
-	 * @details Action enregistrable et donc pouvant faire l'objet d'un défaire refaire. Fait appel à l'implémentation de la dite action du moteur. Est donc "implementation-dependent" du moteur.
-	 */
+    public Inserer(Moteur engine, IHM gui, Enregistreur recorder, GestionnaireDefaireRefaire gest){
+        this.engine = engine;
+        this.gui = gui;
+        this.recorder = recorder; //V2
+        this.gest = gest; //V3
+    }
+
     @Override
     public void execute() {
         String str;
-        if (!flagMemento) {
+        if (!flagMemento) { //V2
             str = gui.getText();
         } else {
             str = m.getText();
             flagMemento = false;
         }
         engine.inserer(str);
-        m = new MementoInserer(str);
-        recorder.enregistrer(this);
+        m = new MementoInserer(str); //V2
+        recorder.enregistrer(this); //V2
+        gest.appelCmd(this); //V3
     }
 
 	/**
@@ -41,7 +39,7 @@ public class Inserer implements Commande, Enregistrable {
 	 * @return Un Memento de sauvegarde de l'état d'une commande d'insertion
 	 */
     @Override
-    public Memento getMemento() {
+    public Memento getMemento() { //V2
         return m;
     }
 
@@ -51,7 +49,7 @@ public class Inserer implements Commande, Enregistrable {
 	 * @exception IllegalArgumentException Levée dans le cas où le Memento fourni n'est pas un MementoInserer
 	 */
     @Override
-    public void setMemento(Memento m) {
+    public void setMemento(Memento m) throws IllegalArgumentException { //V2
         if (m instanceof MementoInserer){
             this.m = (MementoInserer) m;
             flagMemento = true;

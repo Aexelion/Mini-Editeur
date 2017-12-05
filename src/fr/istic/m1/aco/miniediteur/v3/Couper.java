@@ -1,28 +1,22 @@
-/**
- * @file Couper.java
- * @author Dorian "Aexelion" DUMANGET
- * @author Corentin "Heartbroken-Git" CHÉDOTAL
- * @copyright LPRAB 1.0
- */
+package fr.istic.m1.aco.miniediteur.v3;
 
-package fr.istic.m1.aco.miniediteur.v1;
-
-/**
- * @brief Classe contrôlant le fonctionnement de la fonctionnalité permettant de Copier dans un "copié-collé"
- */
-public class Couper implements Commande, Enregistrable {
+public class Couper implements CommandeEnregistrable {
 	
 	private Moteur engine;
-	private Enregistreur recorder;
+	private Enregistreur recorder; //V2
+	private GestionnaireDefaireRefaire gest;
 
-	/**
-	 * @brief Implémentation permettant d'effectuer l'action couper du "coupé-collé"
-	 * @details Action enregistrable et donc pouvant faire l'objet d'un défaire refaire. Fait appel à l'implémentation de la dite action du moteur. Est donc "implementation-dependent" du moteur.
-	 */
+	public Couper(Moteur engine, Enregistreur recorder, GestionnaireDefaireRefaire gest){
+		this.engine = engine;
+		this.recorder = recorder; //V2
+		this.gest = gest; //V3
+	}
+
 	@Override
 	public void execute() {
 		engine.couper();
-		recorder.enregistrer(this);
+		recorder.enregistrer(this); //V2
+		gest.appelCmd(this); //V3
 	}
 
 	/**
@@ -31,7 +25,7 @@ public class Couper implements Commande, Enregistrable {
 	 * @return Un null comme Couper n'a pas de sauvegarde
 	 */
 	@Override
-	public Memento getMemento() {
+	public Memento getMemento() { //V2
 		return null;
 	}
 
@@ -39,7 +33,7 @@ public class Couper implements Commande, Enregistrable {
 	 * @brief Implémentation vierge de la méthode setMemento car l'action Copier n'a pas de sauvegarde du texte à copier
 	 */
 	@Override
-	public void setMemento(Memento m) {
+	public void setMemento(Memento m) { //V2
 
 	}
 }
