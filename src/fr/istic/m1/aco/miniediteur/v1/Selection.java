@@ -52,7 +52,7 @@ public class Selection {
 
 	/**
 	 * @brief Mutateur permettant d'éditer la valeur de fin de la Selection
-	 * @param deb un entier représentant la nouvelle position du marqueur de fin de la Selection
+	 * @param fin un entier représentant la nouvelle position du marqueur de fin de la Selection
 	 */
     public void setFin(int fin) {
         this.fin = fin;

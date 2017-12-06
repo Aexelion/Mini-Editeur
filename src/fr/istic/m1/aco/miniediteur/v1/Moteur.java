@@ -6,7 +6,7 @@
  * @version 1.0
  */
  
-package fr.istic.m1.aco.miniediteur.v3;
+package fr.istic.m1.aco.miniediteur.v1;
 
 /**
  * @brief Interface décrivant les opérations réalisable par le moteur du Mini-Editeur

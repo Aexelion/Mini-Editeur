@@ -34,8 +34,8 @@ public class ImplIHMText implements IHM {
 	/**
 	 * @brief Méthode ajoutant à l'IHM une commande donnée pour la mettre à disposition de l'utilisateur avec un nom donné
 	 * @details Ne rajoute pas deux fois la même commande
-	 * @param nomCmd le nom de la commande donnée à l'IHM pour l'affichage
-	 * @param cmd la Commande a mettre à disposition de l'IHM
+	 * @param s le nom de la commande donnée à l'IHM pour l'affichage
+	 * @param c la Commande a mettre à disposition de l'IHM
 	 */
     @Override
     public void addCmd(String s, Commande c) {
