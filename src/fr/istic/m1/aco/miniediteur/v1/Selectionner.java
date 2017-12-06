@@ -1,7 +1,15 @@
+/**
+ * @file Selectionner.java
+ * @author Dorian "Aexelion" DUMANGET
+ * @author Corentin "Heartbroken-Git" CHÉDOTAL
+ * @copyright LPRAB 1.0
+ * @version 1.0
+ */
+
 package fr.istic.m1.aco.miniediteur.v1;
 
 /**
- * Created by 16009566 on 13/10/17.
+ * @brief Classe implémentant la fonctionnalité permettant de sélectionner 	une partie du texte pour y exécuter d'autres commandes
  */
 public class Selectionner implements Commande {
 
@@ -13,6 +21,10 @@ public class Selectionner implements Commande {
         this.gui = gui;
     }
 
+	
+    /**
+     * @brief Implémentation permettant d'effectuer l'action de slection du texte dans l'éditeur
+     */
     @Override
     public void execute() {
         int deb;
@@ -20,5 +32,5 @@ public class Selectionner implements Commande {
         deb = gui.getInt();
         fin = gui.getInt();
         engine.selectionner(deb, fin);
-    }
+	}
 }

@@ -1,3 +1,11 @@
+/**
+ * @file Affiche.java
+ * @author Dorian "Aexelion" DUMANGET
+ * @author Corentin "Heartbroken-Git" CHÉDOTAL
+ * @copyright LPRAB 1.0
+ * @version 1.0
+ */
+
 package fr.istic.m1.aco.miniediteur.v1;
 
 import org.junit.Before;
@@ -5,9 +13,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by 16009566 on 30/11/17.
- */
 public class SelectionTest {
     Selection sel;
 
