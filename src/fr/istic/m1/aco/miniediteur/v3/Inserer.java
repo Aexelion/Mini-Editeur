@@ -34,13 +34,22 @@ public class Inserer implements CommandeEnregistrable {
         gest.appelCmd(this); //V3
     }
 
+	/**
+	 * @brief Implémentation de la méthode permettant de récupérer un Memento dans lequel sera sauvegardé l'état
+	 * @return Un Memento de sauvegarde de l'état d'une commande d'insertion
+	 */
     @Override
     public Memento getMemento() { //V2
         return m;
     }
 
+	/**
+	 * @brief Implémentation de la méthode permettant d'éditer le Memento pour sauvegarder l'état d'une commande d'insertion
+	 * @param m un MementoInserer qui sera édité
+	 * @exception IllegalArgumentException Levée dans le cas où le Memento fourni n'est pas un MementoInserer
+	 */
     @Override
-    public void setMemento(Memento m) { //V2
+    public void setMemento(Memento m) throws IllegalArgumentException { //V2
         if (m instanceof MementoInserer){
             this.m = (MementoInserer) m;
             flagMemento = true;

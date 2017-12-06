@@ -22,12 +22,21 @@ public class Coller implements CommandeEnregistrable {
         gest.appelCmd(this); //V3
     }
 
+	/**
+     * @brief Implémentation vierge de la méthode getMemento car l'action Coller n'a pas de sauvegarde du texte à copier
+     * @note N'ayant pas de sauvegarde du texte à copier pour réutiliser Coller dans une action Refaire il faut au préalable avoir enregistré soit Copier soit Couper.
+     * @return Un null comme Coller n'a pas de sauvegarde
+     */
     @Override
     public Memento getMemento() { //V2
         return null;
     }
 
+	/**
+     * @brief Implémentation vierge de la méthode setMemento car l'action Coller n'a pas de sauvegarde du texte à copier
+     */
     @Override
     public void setMemento(Memento m) { //V2
+
     }
 }

@@ -1,7 +1,15 @@
-package fr.istic.m1.aco.miniediteur.v3;
+/**
+ * @file ImplMoteur.java
+ * @author Dorian "Aexelion" DUMANGET
+ * @author Corentin "Heartbroken-Git" CHÉDOTAL
+ * @copyright LPRAB 1.0
+ * @version 1.0
+ */
+
+package fr.istic.m1.aco.miniediteur.v1;
 
 /**
- * Created by 16009566 on 20/10/17.
+ * @brief Classe implémentant le Moteur d'une façon compatible avec la spécification de la version 1 du MiniEditeur
  */
 public class ImplMoteur implements Moteur {
 
@@ -9,12 +17,20 @@ public class ImplMoteur implements Moteur {
     private Selection sel;
     private PressePapier pp;
 
+	/**
+	 * @brief Constructeur initialisant à une valeur neutre les variables internes de la classe
+	 */
     public ImplMoteur(){
         this.buf = new Buffer("");
         this.sel = new Selection(0,0);
         this.pp = new PressePapier("");
     }
 
+	/**
+	 * @brief Méthode effectuant du pretty-printing pour préparer l'affichage sur l'IHM
+	 * @details Utilise l'ajout de deux crochets ('[') pour permettre de visualiser la Selection
+	 * @return Un String pour l'affichage
+	 */
     @Override
     public String affiche() {
         String txt = buf.getTxt();
@@ -25,6 +41,10 @@ public class ImplMoteur implements Moteur {
         return res;
     }
 
+	/**
+	 * @brief Méthode effectuant le retrait de la sélection en cours du texte et son stockage dans le PressePapier
+	 * @details Ne vérifie pas si la sous-chaîne selectionnée est vide. Permettant ainsi de flusher volontairement le PressePapier. Replace le curseur de sélection là où le texte sélectionné a été coupé.
+	 */
     @Override
     public void couper() {
         String txt = buf.getTxt();
@@ -41,6 +61,10 @@ public class ImplMoteur implements Moteur {
         this.verifSel();
     }
 
+	/**
+	 * @brief Méthode effectuant la sauvegarde dans le PressePapier de la sélection en cours
+	 * @details Ne vérifie pas si la sous-chaîne selectionnée est vide. Permettant ainsi de flusher volontairement le PressePapier.
+	 */
     @Override
     public void copier() {
         String txt = buf.getTxt();
@@ -52,6 +76,10 @@ public class ImplMoteur implements Moteur {
         this.verifSel();
     }
 
+	/**
+	 * @brief Méthode insérant à l'emplacement de la sélection le contenu du PressePapier
+	 * @details Replace le curseur de la Selection après le texte qui vient d'être inséré.
+	 */
     @Override
     public void coller() {
         String txt = buf.getTxt();
@@ -70,6 +98,11 @@ public class ImplMoteur implements Moteur {
         this.verifSel();
     }
 
+	/**
+	 * @brief Méthode insérant un texte donné à l'emplacement de la sélection
+	 * @details Déplace le curseur de la Selection à la suite du texte qui est inséré
+	 * @param s un String du texte à insérer
+	 */
     @Override
     public void inserer(String s) {
         String txt = buf.getTxt();
@@ -87,6 +120,11 @@ public class ImplMoteur implements Moteur {
         this.verifSel();
     }
 
+	/**
+	 * @brief Méthode définissant la sélection en cours
+	 * @param debut un entier marquant le début de la sélection
+	 * @param fin un entier marquant la fin de la sélection
+	 */
     @Override
     public void selectionner(int debut, int fin) {
         sel.setDeb(debut);
@@ -95,6 +133,11 @@ public class ImplMoteur implements Moteur {
         this.verifSel();
     }
 
+	/**
+	 * @brief Méthode chargeant un Buffer et une Selection dans le Moteur
+	 * @param b le Buffer a charger
+	 * @param s la Selection a charger
+	 */
     @Override
     public void charger(Buffer b, Selection s) {
         this.buf = b;
@@ -103,6 +146,12 @@ public class ImplMoteur implements Moteur {
         this.verifSel();
     }
 
+	/**
+	 * @brief Méthode vérifiant que les marqueurs de début et de fin de Selection sont légaux et si ils ne sont pas inversés
+	 * @details Si les marqueurs de Selection sont inversés elle les remets dans l'ordre
+	 * @sa verifDeb()
+	 * @sa verifFin()
+	 */
     private void verifSel() {
         this.verifDeb();
         this.verifFin();
@@ -116,6 +165,9 @@ public class ImplMoteur implements Moteur {
         }
     }
 
+	/**
+	 * @brief Méthode vérifiant et corrigeant le marqueur de début de la Selection s'il est à l'extérieur du texte
+	 */
     private void verifDeb() {
         int deb = sel.getDeb();
         int bufLen = buf.getTxt().length();
@@ -127,6 +179,9 @@ public class ImplMoteur implements Moteur {
         }
     }
 
+	/**
+	 * @brief Méthode vérifiant et corrigeant le marqueur de fin de la Selection s'il est à l'extérieur du texte
+	 */
     private void verifFin() {
         int fin = sel.getFin();
         int bufLen = buf.getTxt().length();
@@ -138,16 +193,28 @@ public class ImplMoteur implements Moteur {
         }
     }
 
+	/**
+	 * @brief Accesseur du Buffer du Moteur
+	 * @return Le Buffer du Moteur
+	 */
     @Override
     public Buffer getbuf() {
         return buf;
     }
 
+	/**
+	 * @brief Accesseur de la Selection du Moteur
+	 * @return La Selection contenue dans le Moteur
+	 */
     @Override
     public Selection getSel() {
         return sel;
     }
 
+	/**
+	 * @brief Accesseur du PressePapier du Moteur
+	 * @return Le PressePapier du Moteur
+	 */
     @Override
     public PressePapier getPP() {
         return pp;

@@ -3,10 +3,10 @@
  * @author Dorian "Aexelion" DUMANGET
  * @author Corentin "Heartbroken-Git" CHÉDOTAL
  * @copyright LPRAB 1.0
- * @version 3.0
+ * @version 1.0
  */
 
-package fr.istic.m1.aco.miniediteur.v3;
+package fr.istic.m1.aco.miniediteur.v1;
 
 /**
  * @brief Interface décrivant une commande déclenchée par une action sur l'IHM de l'Utilisateur
