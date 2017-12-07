@@ -82,11 +82,13 @@ public class ImplEnregistreur implements Enregistreur {
 	 */
     @Override
     public void rejouer() {
-        for (Paire p : macro){
-            CommandeEnregistrable cmd = p.getCommande();
-            Memento m = p.getMemento();
-            cmd.setMemento(m);
-            cmd.execute();
+        if (!enrEnCours) {
+            for (Paire p : macro) {
+                CommandeEnregistrable cmd = p.getCommande();
+                Memento m = p.getMemento();
+                cmd.setMemento(m);
+                cmd.execute();
+            }
         }
     }
 
