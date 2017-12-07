@@ -9,7 +9,7 @@
 package fr.istic.m1.aco.miniediteur.v2;
 
 /**
- * @brief Classe définissant ce qu'est une séléction de texte dans le MiniEditeur
+ * @brief Classe définissant ce qu'est une sélection de texte dans le MiniEditeur
  */
 public class Selection {
 

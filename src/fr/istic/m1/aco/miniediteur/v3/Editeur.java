@@ -1,9 +1,16 @@
 /**
- * @(#) Editeur.java
+ * @file Editeur.java
+ * @author Dorian "Aexelion" DUMANGET
+ * @author Corentin "Heartbroken-Git" CHÉDOTAL
+ * @copyright LPRAB 1.0
+ * @version 3.0
  */
 
 package fr.istic.m1.aco.miniediteur.v3;
 
+/**
+ * @brief Classe principale représentant l'éditeur et appelant toutes les pièces nécessaires à son fonctionnement
+ */
 public class Editeur {
 	private IHM gui;
 	private Moteur engine;
@@ -26,6 +33,13 @@ public class Editeur {
 	private Defaire defaire;
 	private Refaire refaire;
 
+	/**
+	 * @brief Constructeur chargeant une IHM, un Moteur dans l'Editeur, l'Enregistreur utilisé pour les macros et le GestionnaireDefaireRefaire permettant de faire des "Undo-Redo", et lancant le chargement des Commandes disponible dans l'Editeur
+	 * @param i l'IHM à charger dans l'Editeur
+	 * @param m le Moteur à charger dans l'Editeur
+	 * @param e l'Enregistreur à charger dans l'Editeur
+	 * @param g le GestionnaireDefaireRefaire à charger dans l'Editeur
+	 */
 	public Editeur (IHM i, Moteur m, Enregistreur e, GestionnaireDefaireRefaire g) {
 
 		this.gui = i;
@@ -38,6 +52,10 @@ public class Editeur {
 		this.createV3();
 	}
 
+	/**
+	 * @brief Fonction créant et affectant les Commandes de la version 1 à l'IHM
+	 * @details Donne les commandes Copier, Coller, Couper, Selectionner et Inserer telles que les spécifications de la version 1 demandent
+	 */
 	private void createV1(){
 		this.coller = new Coller(engine, recorder, gest);
 		this.copier = new Copier(engine, recorder);
@@ -52,6 +70,10 @@ public class Editeur {
 		gui.addCmd("Inserer",		this.inserer);
 	}
 
+	/**
+	 * @brief Fonction créant et affectant les Commandes de la version 2 à l'IHM
+	 * @details Donne les commandes Demarrer, Stopper et Rejouer permettant de créer et rejouer une macro telles que les spécifications de la version 2 demandent
+	 */
 	private void createV2(){
 		this.demarrer = new Demarrer(recorder);
 		this.stopper = new Stopper(recorder);
@@ -62,6 +84,10 @@ public class Editeur {
 		gui.addCmd("Rejouer",		this.rejouer);
 	}
 
+	/**
+	 * @brief Fonction créant et affectant les Commandes de la version 3 à l'IHM
+	 * @details Donne les commandes Defaire et Refaire permettant d'annuler ou de reproduire la dernière action de l'utilisateur telle que la spécification de la version 3 le demande
+	 */
 	private void createV3(){
 		this.defaire = new Defaire(gest);
 		this.refaire = new Refaire(gest);
@@ -70,7 +96,9 @@ public class Editeur {
 		gui.addCmd("Refaire",		this.refaire);
 	}
 
-
+	/**
+	 * @brief Fonction principale du Mini-Editeur
+	 */
 	public static void main(String[] args){
 
 		ImplMoteur engine = new ImplMoteur();

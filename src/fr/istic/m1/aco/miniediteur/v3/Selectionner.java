@@ -1,7 +1,15 @@
+/**
+ * @file Selectionner.java
+ * @author Dorian "Aexelion" DUMANGET
+ * @author Corentin "Heartbroken-Git" CHÉDOTAL
+ * @copyright LPRAB 1.0
+ * @version 3.0
+ */
+
 package fr.istic.m1.aco.miniediteur.v3;
 
 /**
- * Created by 16009566 on 13/10/17.
+ * @brief Classe implémentant la fonctionnalité permettant de sélectionner une partie du texte pour y exécuter d'autres commandes
  */
 public class Selectionner implements CommandeEnregistrable {
 
@@ -12,6 +20,13 @@ public class Selectionner implements CommandeEnregistrable {
     private boolean flagMemento = false; //V2
     private GestionnaireDefaireRefaire gest; //V3
 
+	/**
+	 * @brief Constructeur affectant un Moteur, une IHM, un Enregistreur et un GestionnaireDefaireRefaire pour gérer le "Undo-Redo" de la commande
+	 * @param engine le Moteur utilisé par la commande
+	 * @param gui l'IHM à employer pour questionner l'utilisateur
+	 * @param recorder l'Enregistreur pouvant enregistrer la commande
+	 * @param gest le GestionnaireDefaireRefaire gérant le "Undo-Redo" de la commande
+	 */
     public Selectionner(Moteur engine, IHM gui, Enregistreur recorder, GestionnaireDefaireRefaire gest){
         this.engine = engine;
         this.recorder = recorder; //V2
@@ -19,6 +34,9 @@ public class Selectionner implements CommandeEnregistrable {
         this.gest = gest; //V3
     }
 
+	/**
+     * @brief Implémentation permettant d'effectuer l'action de sélection du texte dans l'éditeur
+     */
     @Override
     public void execute() {
         int deb;
@@ -37,11 +55,20 @@ public class Selectionner implements CommandeEnregistrable {
         gest.appelCmd(this); //V3
     }
 
+	/**
+	 * @brief Accesseur donnant accès à la sauvegarde de l'état de Selectionner
+	 * @return Un MementoSelectionner contenant une sauvegarde de l'état de la commande
+	 */
     @Override
     public Memento getMemento() { //V2
         return m;
     }
 
+	/**
+	 * @brief Mutateur permettant d'éditer la sauvegarde de l'état de la commande
+	 * @param m un Memento remplaçant l'ancien état
+	 * @exception IllegalArgumentException si le Memento donné en entré n'est pas un MementoSelectionner
+	 */
     @Override
     public void setMemento(Memento m) throws IllegalArgumentException { //V2
         if (m instanceof MementoSelectionner){
