@@ -9,7 +9,7 @@ public class Copier implements CommandeEnregistrable {
     private Enregistreur recorder; //V2
     //private GestionnaireDefaireRefaire gest; //V3
 
-    public Copier(Moteur engine, Enregistreur recorder, GestionnaireDefaireRefaire gest){
+    public Copier(Moteur engine, Enregistreur recorder/*, GestionnaireDefaireRefaire gest*/){
         this.engine = engine;
         this.recorder = recorder; //V2
         //this.gest = gest; //V3

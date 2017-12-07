@@ -40,7 +40,7 @@ public class Editeur {
 
 	private void createV1(){
 		this.coller = new Coller(engine, recorder, gest);
-		this.copier = new Copier(engine, recorder, gest);
+		this.copier = new Copier(engine, recorder);
 		this.couper = new Couper(engine, recorder, gest);
 		this.selectionner = new Selectionner(engine, gui, recorder, gest);
 		this.inserer = new Inserer(engine, gui, recorder, gest);

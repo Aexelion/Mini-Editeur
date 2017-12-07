@@ -4,7 +4,7 @@ public class Couper implements CommandeEnregistrable {
 	
 	private Moteur engine;
 	private Enregistreur recorder; //V2
-	private GestionnaireDefaireRefaire gest;
+	private GestionnaireDefaireRefaire gest; //V3
 
 	public Couper(Moteur engine, Enregistreur recorder, GestionnaireDefaireRefaire gest){
 		this.engine = engine;
