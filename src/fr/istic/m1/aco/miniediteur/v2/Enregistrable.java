@@ -9,7 +9,7 @@
 package fr.istic.m1.aco.miniediteur.v2;
 
 /**
- * @brief Interface décrivant et fournissant les opérations nécéssaire à la faculté d'un élément à appartenir à une macro
+ * @brief Interface décrivant et fournissant les opérations nécessaire à la faculté d'un élément à appartenir à une macro
  */
 public interface Enregistrable {
 

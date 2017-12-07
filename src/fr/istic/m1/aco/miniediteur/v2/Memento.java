@@ -9,7 +9,7 @@
 package fr.istic.m1.aco.miniediteur.v2;
 
 /**
- * @brief Interface vierge de structure permettant d'identifier les Memento'
+ * @brief Interface vierge de structure permettant d'identifier les Memento
  */
 public interface Memento {
 }

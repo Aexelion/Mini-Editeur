@@ -1,17 +1,37 @@
+/**
+ * @file Couper.java
+ * @author Dorian "Aexelion" DUMANGET
+ * @author Corentin "Heartbroken-Git" CHÉDOTAL
+ * @copyright LPRAB 1.0
+ * @version 3.0
+ */
+
 package fr.istic.m1.aco.miniediteur.v3;
 
+/**
+ * @brief Classe implémentant l'action de Couper une selection de texte dans le cadre d'un "couper-coller" par le biais d'une Commande
+ */
 public class Couper implements CommandeEnregistrable {
 	
 	private Moteur engine;
 	private Enregistreur recorder; //V2
 	private GestionnaireDefaireRefaire gest; //V3
 
+	/**
+	 * @brief Constructeur permettant de définir le Moteur à employer pour exéctuer la Commande, l'Enregistreur qui conservera éventuellement son emploi et le GestionnaireDefaireRefaire permettant de refaire les commandes
+	 * @param engine le Moteur à employer pour effectuer l'action de Copier
+	 * @param recorder l'Enregistreur qui recevra un appel d'enregistrement à l'utilisation de la commande
+	 * @param gest le GestionnaireDefaireRefaire permettant de faire le "Undo-Redo" de la commande
+	 */
 	public Couper(Moteur engine, Enregistreur recorder, GestionnaireDefaireRefaire gest){
 		this.engine = engine;
 		this.recorder = recorder; //V2
 		this.gest = gest; //V3
 	}
 
+	/**
+	 * @brief Implémentation permettant d'effectuer l'action couper du "coupé-collé"
+	 */
 	@Override
 	public void execute() {
 		engine.couper();
